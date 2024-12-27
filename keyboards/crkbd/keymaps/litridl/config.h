@@ -25,8 +25,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define QUICK_TAP_TERM 0
 //#define TAPPING_TERM 100
 
-#pragma once
-
 #define AUTO_SHIFT_TIMEOUT 150
 #define NO_AUTO_SHIFT_NUMERIC
 #define AUTO_SHIFT_REPEAT

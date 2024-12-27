@@ -1,5 +1,4 @@
 #include QMK_KEYBOARD_H
-#include "g/keymap_combo.h"
 
 #define CTL_OSM OSM(MOD_LCTL)  // One Shot Control
 #define ALT_OSM OSM(MOD_LALT)  // One Shot Alt
@@ -19,8 +18,7 @@
 
 #define C_PSCR C(KC_PSCR)
 
-// layer names enum
-enum {
+enum layer_names {
     _QWERTY,
     _NUM,
     _SYM,
@@ -72,17 +70,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_FUN] = LAYOUT_split_3x6_3_ex2(
-      QK_BOOT,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,  _______,     _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
-      XXXXXXX, RGB_HUI, RGB_SAI, RGB_VAI, KC_VOLU,  C_PSCR,  _______,     _______, KC_NO, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  KC_F12,
-      RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, KC_VOLD, KC_PSCR,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, CM_TOGG, AS_TOGG,
-                                 _______, _______, _______,                      _______, _______, _______
+    QK_BOOT,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,  _______,     _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
+    XXXXXXX, RGB_HUI, RGB_SAI, RGB_VAI, KC_VOLU,  C_PSCR,  _______,     _______, KC_NO, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  KC_F12,
+    RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, KC_VOLD, KC_PSCR,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, CM_TOGG, AS_TOGG,
+                               _______, _______, _______,                      _______, _______, _______
   ),
 
   [_ENTHIUM] = LAYOUT_split_3x6_3_ex2(
-       KC_GRV,    KC_B,    KC_Y,    KC_O,    KC_U, KC_SLSH, ALT_OSM,     SFT_OSM,    KC_X,    KC_L,    KC_D,    KC_W,    KC_V,  XXXXXXX,
-         KC_Z,    KC_C,    KC_I,    KC_E,    KC_A, KC_COMM, CTL_OSM,     GUI_OSM,    KC_K,    KC_H,    KC_T,    KC_N,    KC_S,     KC_Q,
-      XXXXXXX, KC_QUOT, KC_MINS,  KC_EQL,  KC_DOT, KC_SCLN,                          KC_J,    KC_M,    KC_G,    KC_P,    KC_F,    TG(1),
-                                 HYP_OSM, TL_UPPR, TL_LOWR,                       TD_RBKS,  KC_SPC, KC_RSFT
+       KC_GRV,    KC_B,    KC_Y,    KC_O,    KC_U, KC_SLSH, _______,     _______, KC_X,    KC_L,    KC_D,    KC_W,    KC_V,  XXXXXXX,
+         KC_Z,    KC_C,    KC_I,    KC_E,    KC_A, KC_COMM, _______,     _______, KC_K,    KC_H,    KC_T,    KC_N,    KC_S,     KC_Q,
+      XXXXXXX, KC_QUOT, KC_MINS,  KC_EQL,  KC_DOT, KC_SCLN,                       KC_J,    KC_M,    KC_G,    KC_P,    KC_F, TG(_NUM),
+                                 HYP_OSM, TL_UPPR, TL_LOWR,                    TD_RBKS,  KC_SPC, KC_RSFT
   ),
 
 };
+
+#include "g/keymap_combo.h"
