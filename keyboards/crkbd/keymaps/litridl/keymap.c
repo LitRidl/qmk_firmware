@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+#include "g/keymap_combo.h"
 
 #define CTL_OSM OSM(MOD_LCTL)  // One Shot Control
 #define ALT_OSM OSM(MOD_LALT)  // One Shot Alt
@@ -84,60 +85,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  HYP_OSM, TL_UPPR, TL_LOWR,                       TD_RBKS,  KC_SPC, KC_RSFT
   ),
 
-};
-
-enum combos {
-    JK_ESC,
-    SD_ESC,
-    GB_TAB,
-    MCOMMA_ENT,
-    COMMADOT_SENT,
-    HN_MINUS,
-    JM_EQUAL,
-    DF_LPAR,
-    FG_RPAR,
-    CV_LCBR,
-    VB_RCBR,
-    ER_LBRC,
-    RT_RBRC,
-    SEMISLASH_BSLS,
-    // OSL12_3,
-    // BOSL2_MEH,
-    COMBO_LENGTH
-};
-
-const uint16_t PROGMEM jk_combo[] = {KC_J, KC_K, COMBO_END};
-const uint16_t PROGMEM sd_combo[] = {KC_S, KC_D, COMBO_END};
-const uint16_t PROGMEM gb_combo[] = {KC_G, KC_B, COMBO_END};
-const uint16_t PROGMEM mcomma_combo[] = {KC_M, KC_COMM, COMBO_END};
-const uint16_t PROGMEM commadot_combo[] = {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM hn_combo[] = {KC_H, KC_N, COMBO_END};
-const uint16_t PROGMEM jm_combo[] = {KC_J, KC_M, COMBO_END};
-const uint16_t PROGMEM df_combo[] = {KC_D, KC_F, COMBO_END};
-const uint16_t PROGMEM fg_combo[] = {KC_F, KC_G, COMBO_END};
-const uint16_t PROGMEM cv_combo[] = {KC_C, KC_V, COMBO_END};
-const uint16_t PROGMEM vb_combo[] = {KC_V, KC_B, COMBO_END};
-const uint16_t PROGMEM er_combo[] = {KC_E, KC_R, COMBO_END};
-const uint16_t PROGMEM rt_combo[] = {KC_R, KC_T, COMBO_END};
-const uint16_t PROGMEM semislash_combo[] = {KC_SCLN, KC_SLSH, COMBO_END};
-// const uint16_t PROGMEM osl12_combo[] = {OSL(1), OSL(2), COMBO_END};
-// const uint16_t PROGMEM bosl2_combo[] = {KC_B, OSL(2), COMBO_END};
-
-combo_t key_combos[] = {
-    [JK_ESC] = COMBO(jk_combo, KC_ESC),
-    [SD_ESC] = COMBO(sd_combo, KC_ESC),
-    [GB_TAB] = COMBO(gb_combo, KC_TAB),
-    [MCOMMA_ENT] = COMBO(mcomma_combo, KC_ENT),
-    [COMMADOT_SENT] = COMBO(commadot_combo, S(KC_ENT)),
-    [HN_MINUS] = COMBO(hn_combo, KC_MINS),
-    [JM_EQUAL] = COMBO(jm_combo, KC_EQL),
-    [DF_LPAR] = COMBO(df_combo, KC_LEFT_PAREN),     // (
-    [FG_RPAR] = COMBO(fg_combo, KC_RIGHT_PAREN),     // )
-    [CV_LCBR] = COMBO(cv_combo, KC_LEFT_CURLY_BRACE),  // {
-    [VB_RCBR] = COMBO(vb_combo, KC_RIGHT_CURLY_BRACE),  // }
-    [ER_LBRC] = COMBO(er_combo, KC_LBRC),     // [
-    [RT_RBRC] = COMBO(rt_combo, KC_RBRC),     // ]
-    [SEMISLASH_BSLS] = COMBO(semislash_combo, KC_BSLS),
-    // [OSL12_3] = COMBO(osl12_combo, OSL(3)),
-    // [BOSL2_MEH] = COMBO(bosl2_combo, OSM(MOD_MEH)),
 };
