@@ -22,16 +22,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 //#define USE_MATRIX_I2C
 
-//#define QUICK_TAP_TERM 0
-//#define TAPPING_TERM 100
+#define QUICK_TAP_TERM 30
+#define TAPPING_TERM 200
+// #define PERMISSIVE_HOLD
 
-#define AUTO_SHIFT_TIMEOUT 150
-#define NO_AUTO_SHIFT_NUMERIC
-#define AUTO_SHIFT_REPEAT
+#define AUTO_SHIFT_TIMEOUT 170
+#define NO_AUTO_SHIFT_ALPHA
 
-#define COMBO_TERM 40
+#define COMBO_TERM 30
 
+//
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+
+// _NUM, _SYM, _FUN
+#define TRI_LAYER_LOWER_LAYER 2
+#define TRI_LAYER_UPPER_LAYER 3
+#define TRI_LAYER_ADJUST_LAYER 4
 
 #ifdef RGBLIGHT_ENABLE
     #define RGBLIGHT_EFFECT_BREATHING

@@ -1,41 +1,45 @@
 // Alternate reference layers by layer
 //               Layer     Reference layer
-//COMBO_REF_LAYER(_ENTHIUM, _QWERTY)  // reference the qwerty layer for dvorak.
+COMBO_REF_LAYER(_ENTHIUM, _QWERTY)  // reference the qwerty layer for dvorak.
 // COMBO_REF_LAYER(_NAV, _NAV)         // explicit reference to self instead of the default.
 
 // Define combos based on base layer
 //   name            result                chord keys
-COMB(JK_ESC,         KC_ESC,               KC_J, KC_K)
-COMB(SD_ESC,         KC_ESC,               KC_S, KC_D)
+// COMB(JK_ESC,         KC_ESC,               KC_J, KC_K)
+COMB(SD_ESC,         KC_ESC,               MQ_S, MQ_D)
 COMB(VB_TAB,         KC_TAB,               KC_V, KC_B)
 COMB(MCOMMA_ENT,     KC_ENT,               KC_M, KC_COMM)
-COMB(COMMADOT_SENT,  S(KC_ENT),            KC_COMM, KC_DOT)
+// COMB(COMMADOT_SENT,  S(KC_ENT),            KC_COMM, KC_DOT)
 COMB(NM_BSPC,        KC_BSPC,              KC_N, KC_M)
-COMB(HJ_DEL,         KC_DEL,               KC_H, KC_J)
+COMB(HJ_DEL,         KC_DEL,               KC_H, MQ_J)
+
+// COMB(GE_ENG_QWE,     ENG_QWE,              KC_G, KC_E)
+// COMB(GT_ENG_ENT,     ENG_ENT,              KC_G, KC_T)
+// COMB(GR_RUS_QWE,     RUS_QWE,              KC_G, KC_R)
+COMB(QE_ENG_QWE,     ENG_QWE,              KC_Q, KC_E)
+COMB(QT_ENG_ENT,     ENG_ENT,              KC_Q, KC_T)
+COMB(QR_RUS_QWE,     RUS_QWE,              KC_Q, KC_R)
 
 // Symbols
 COMB(HN_MINUS,       KC_MINS,              KC_H, KC_N)
-COMB(JM_EQUAL,       KC_EQL,               KC_J, KC_M)
-COMB(SEMISLASH_BSLS, KC_BSLS,              KC_SCLN, KC_SLSH)
+COMB(JM_EQUAL,       KC_EQL,               MQ_J, KC_M)
+COMB(SEMISLASH_BSLS, KC_BSLS,              MQ_SCLN, KC_SLSH)
 
 // "Number" row + row below combos for shifted numbers
-COMB(QA_EXLM, KC_EXLM, KC_Q, KC_A)     // !
-COMB(WS_AT,   KC_AT,   KC_W, KC_S)     // @
-COMB(ED_HASH, KC_HASH, KC_E, KC_D)     // #
-COMB(RF_DLR,  KC_DLR,  KC_R, KC_F)     // $
+COMB(QA_EXLM, KC_EXLM, KC_Q, MQ_A)     // !
+COMB(WS_AT,   KC_AT,   KC_W, MQ_S)     // @
+COMB(ED_HASH, KC_HASH, KC_E, MQ_D)     // #
+COMB(RF_DLR,  KC_DLR,  KC_R, MQ_F)     // $
 COMB(TG_PERC, KC_PERC, KC_T, KC_G)     // %
 COMB(YH_CIRC, KC_CIRC, KC_Y, KC_H)     // ^
-COMB(UJ_AMPR, KC_AMPR, KC_U, KC_J)     // &
-COMB(IK_ASTR, KC_ASTR, KC_I, KC_K)     // *
+COMB(UJ_AMPR, KC_AMPR, KC_U, MQ_J)     // &
+COMB(IK_ASTR, KC_ASTR, KC_I, MQ_K)     // *
 // Redundant due to DF and FG combos
 // COMB(OL_LPRN, KC_LPRN, KC_O, KC_L)     // (
 // COMB(PS_RPRN, KC_RPRN, KC_P, KC_SCLN)  // )
 
 // Brackets, braces, and parentheses
-COMB(DF_LPAR,        KC_LEFT_PAREN,        KC_D, KC_F)
-COMB(FG_RPAR,        KC_RIGHT_PAREN,       KC_F, KC_G)
-// Try autoshift to get {} from []
-// COMB(CV_LCBR,        KC_LEFT_CURLY_BRACE,  KC_C, KC_V)
-// COMB(VB_RCBR,        KC_RIGHT_CURLY_BRACE, KC_V, KC_B)
+COMB(DF_LPAR,        KC_LEFT_PAREN,        MQ_D, MQ_F)
+COMB(FG_RPAR,        KC_RIGHT_PAREN,       MQ_F, KC_G)
 COMB(ER_LBRC,        KC_LEFT_BRACKET,      KC_E, KC_R)
 COMB(RT_RBRC,        KC_RIGHT_BRACKET,     KC_R, KC_T)
