@@ -96,15 +96,15 @@ tap_dance_action_t tap_dance_actions[] = {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_split_3x6_3_ex2(
-     KC_GRV,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T, KC_RGHT,       KC_UP,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  TD_RUHZ,
-     KC_TAB,    MQ_A,    MQ_S,    MQ_D,    MQ_F,    KC_G, KC_LEFT,     KC_DOWN,    KC_H,    MQ_J,    MQ_K,    MQ_L, MQ_SCLN,  KC_QUOT,
+     KC_GRV,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T, KC_UP,       KC_RGHT,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  TD_RUHZ,
+     KC_TAB,    MQ_A,    MQ_S,    MQ_D,    MQ_F,    KC_G, KC_DOWN,     KC_LEFT,    KC_H,    MQ_J,    MQ_K,    MQ_L, MQ_SCLN,  KC_QUOT,
      KC_ENT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                          KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, TG(_NUM),
                                HYP_OSM, TL_UPPR, TL_LOWR,                       KC_BSPC,  KC_SPC, KC_RSFT
   ),
 
   [_ENTHIUM] = LAYOUT_split_3x6_3_ex2(
-     KC_GRV,    KC_B,    KC_Y,    KC_O,    KC_U, KC_SLSH, KC_RGHT,       KC_UP,    KC_X,    KC_L,    KC_D,    KC_W,    KC_V,  XXXXXXX,
-       KC_Z,    ME_C,    ME_I,    ME_E,    ME_A, KC_COMM, KC_LEFT,     KC_DOWN,    KC_K,    ME_H,    ME_T,    ME_N,    ME_S,     KC_Q,
+     KC_GRV,    KC_B,    KC_Y,    KC_O,    KC_U, KC_SLSH, KC_UP,       KC_RGHT,    KC_X,    KC_L,    KC_D,    KC_W,    KC_V,  XXXXXXX,
+       KC_Z,    ME_C,    ME_I,    ME_E,    ME_A, KC_COMM, KC_DOWN,     KC_LEFT,    KC_K,    ME_H,    ME_T,    ME_N,    ME_S,     KC_Q,
      KC_ENT, KC_QUOT, KC_MINS,  KC_EQL,  KC_DOT, KC_SCLN,                          KC_J,    KC_M,    KC_G,    KC_P,    KC_F, TG(_NUM),
                                HYP_OSM, TL_UPPR, TL_LOWR,                          KC_R,  KC_SPC, KC_RSFT
   ),

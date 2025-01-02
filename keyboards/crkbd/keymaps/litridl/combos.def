@@ -25,18 +25,29 @@ COMB(HN_MINUS,       KC_MINS,              KC_H, KC_N)
 COMB(JM_EQUAL,       KC_EQL,               MQ_J, KC_M)
 COMB(SEMISLASH_BSLS, KC_BSLS,              MQ_SCLN, KC_SLSH)
 
-// "Number" row + row below combos for shifted numbers
-COMB(QA_EXLM, KC_EXLM, KC_Q, MQ_A)     // !
-COMB(WS_AT,   KC_AT,   KC_W, MQ_S)     // @
-COMB(ED_HASH, KC_HASH, KC_E, MQ_D)     // #
-COMB(RF_DLR,  KC_DLR,  KC_R, MQ_F)     // $
-COMB(TG_PERC, KC_PERC, KC_T, KC_G)     // %
-COMB(YH_CIRC, KC_CIRC, KC_Y, KC_H)     // ^
-COMB(UJ_AMPR, KC_AMPR, KC_U, MQ_J)     // &
-COMB(IK_ASTR, KC_ASTR, KC_I, MQ_K)     // *
-// Redundant due to DF and FG combos
-// COMB(OL_LPRN, KC_LPRN, KC_O, KC_L)     // (
-// COMB(PS_RPRN, KC_RPRN, KC_P, KC_SCLN)  // )
+// Number row symbols
+// COMB(QA_EXLM, KC_EXLM, KC_Q, MQ_A)     // !
+// COMB(WS_AT,   KC_AT,   KC_W, MQ_S)     // @
+// COMB(ED_HASH, KC_HASH, KC_E, MQ_D)     // #
+// COMB(RF_DLR,  KC_DLR,  KC_R, MQ_F)     // $
+// COMB(TG_PERC, KC_PERC, KC_T, KC_G)     // %
+// COMB(YH_CIRC, KC_CIRC, KC_Y, KC_H)     // ^
+// COMB(UJ_AMPR, KC_AMPR, KC_U, MQ_J)     // &
+// COMB(IK_ASTR, KC_ASTR, KC_I, MQ_K)     // *
+// // COMB(OL_LPRN, KC_LPRN, KC_O, KC_L)     // (
+// // COMB(PS_RPRN, KC_RPRN, KC_P, KC_SCLN)  // )
+
+// Try numbers + auto-shift to get both numbers and their shifted variants
+COMB(QA_1,    KC_1,   KC_Q, MQ_A)     // !
+COMB(WS_2,    KC_2,   KC_W, MQ_S)     // @
+COMB(ED_3,    KC_3,   KC_E, MQ_D)     // #
+COMB(RF_4,    KC_4,   KC_R, MQ_F)     // $
+COMB(TG_5,    KC_5,   KC_T, KC_G)     // %
+COMB(YH_6,    KC_6,   KC_Y, KC_H)     // ^
+COMB(UJ_7,    KC_7,   KC_U, MQ_J)     // &
+COMB(IK_8,    KC_8,   KC_I, MQ_K)     // *
+COMB(OL_9,    KC_9,   KC_O, MQ_L)     // (
+COMB(PSCLN_0, KC_0,   KC_P, MQ_SCLN)  // )
 
 // Brackets, braces, and parentheses
 COMB(DF_LPAR,        KC_LEFT_PAREN,        MQ_D, MQ_F)
