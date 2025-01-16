@@ -7,18 +7,19 @@ COMBO_REF_LAYER(_ENTHIUM, _QWERTY)  // reference the qwerty layer for dvorak.
 //   name            result                chord keys
 // COMB(JK_ESC,         KC_ESC,               KC_J, KC_K)
 COMB(SD_ESC,         KC_ESC,               MQ_S, MQ_D)
-COMB(VB_TAB,         KC_TAB,               KC_V, KC_B)
+// COMB(ZX_ESC,         KC_ESC,               KC_Z, KC_X)
+COMB(CV_TAB,         KC_TAB,               KC_C, KC_V)
 COMB(MCOMMA_ENT,     KC_ENT,               KC_M, KC_COMM)
 // COMB(COMMADOT_SENT,  S(KC_ENT),            KC_COMM, KC_DOT)
-COMB(NM_BSPC,        KC_BSPC,              KC_N, KC_M)
-COMB(HJ_DEL,         KC_DEL,               KC_H, MQ_J)
+// COMB(NM_BSPC,        KC_BSPC,              KC_N, KC_M)
+// COMB(HJ_DEL,         KC_DEL,               KC_H, MQ_J)
 
-// COMB(GE_ENG_QWE,     ENG_QWE,              KC_G, KC_E)
-// COMB(GT_ENG_ENT,     ENG_ENT,              KC_G, KC_T)
-// COMB(GR_RUS_QWE,     RUS_QWE,              KC_G, KC_R)
-COMB(QE_ENG_QWE,     ENG_QWE,              KC_Q, KC_E)
-COMB(QT_ENG_ENT,     ENG_ENT,              KC_Q, KC_T)
-COMB(QR_RUS_QWE,     RUS_QWE,              KC_Q, KC_R)
+// // COMB(GE_ENG_QWE,     ENG_QWE,              KC_G, KC_E)
+// // COMB(GT_ENG_ENT,     ENG_ENT,              KC_G, KC_T)
+// // COMB(GR_RUS_QWE,     RUS_QWE,              KC_G, KC_R)
+// COMB(QE_ENG_QWE,     ENG_QWE,              KC_Q, KC_E)
+// COMB(QT_ENG_ENT,     ENG_ENT,              KC_Q, KC_T)
+// COMB(QR_RUS_QWE,     RUS_QWE,              KC_Q, KC_R)
 
 // Symbols
 COMB(HN_MINUS,       KC_MINS,              KC_H, KC_N)
@@ -50,7 +51,7 @@ COMB(OL_9,    KC_9,   KC_O, MQ_L)     // (
 COMB(PSCLN_0, KC_0,   KC_P, MQ_SCLN)  // )
 
 // Brackets, braces, and parentheses
-COMB(DF_LPAR,        KC_LEFT_PAREN,        MQ_D, MQ_F)
-COMB(FG_RPAR,        KC_RIGHT_PAREN,       MQ_F, KC_G)
+// COMB(DF_LPAR,        KC_LEFT_PAREN,        MQ_D, MQ_F)
+// COMB(FG_RPAR,        KC_RIGHT_PAREN,       MQ_F, KC_G)
 COMB(ER_LBRC,        KC_LEFT_BRACKET,      KC_E, KC_R)
 COMB(RT_RBRC,        KC_RIGHT_BRACKET,     KC_R, KC_T)
