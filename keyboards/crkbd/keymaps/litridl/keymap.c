@@ -69,73 +69,47 @@ enum custom_keycodes {
 // #define S_PASTE S(PASTE)
 
 #define C_PSCR C(KC_PSCR)
-#define SYM_R LT(_SYM, KC_R)
 #define OSL_MED OSL(_MEDIA)
 
-/*
-Problems:
-- add repeat and alt repeat keys
-- enter combo is to close to backspace combo
-- tab combo requires hand repositioning
-- hj combo for delete is not used, why?
-- language combos are hard to tap
-- accidental tapping of arrows on the inner 2-key columns
-- HYP_OSM is uncomfortable (at least on the left hand)
-- right-hand backspace is uncomfortable when working with mouse
-- brackets misfire sometimes
-- enthium doesn't need symbols combos (symbols are on the bottom row, left hand)
-- curl of the middle thumb key is fine, but not very comfortable
-- third row is rarely used, but uncomfortable
-- although, volume should be reachable with one hand (tv series/videos)
-- navigation arrows should be reachable with one hand (tv series/videos), right is fine
-- outer columns are not consistent in the bottom row, why don't I use them?
-- hard to type numbers like otp codes
-
-Ideas and thoughts:
-- numpad block synced with upper number row in it's upper part
-- nav layer on enthium R (right hand mod tap), in qwerty it's just Nav. Likely I won't need nav when right hand holds mouse anyway, and this way hjkl "arrows" are on one hand with Nav key below
-- media layer key has to be on the same side as volume for 1 handed operation, preferrably osm? considering I have rep/altrep it doesn't matter if it's osm or layer hold key
-- however, osm may be dangerous because of possible accidental presses. But let's try it.
-- rep/altrep are better on the left hand?
-- C + V combo for Tab on the left hand?
-- try leftmost bottom row key for enter (keep M + , combo for now)
-- move symbols layer brackets/braces on the left hand in place of combos?
-- layers might change, it's okay, possibly I'd have to put navigation to the symbols layer, by moving symbols to the left hand?
-*/
+// See config.h for TRI_LAYER_LOWER_LAYER and TRI_LAYER_UPPER_LAYER
+#define TO_NUM TL_LOWR
+#define TO_SYM TL_UPPR
+#define R_SYM LT(_SYM, KC_R)
+#define TAB_NUM LT(_NUM, KC_TAB)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_split_3x6_3_ex2(
      KC_GRV,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T, QK_AREP,     OSL_MED,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, TD_RUHZ,
     XXXXXXX,    MQ_A,    MQ_S,    MQ_D,    MQ_F,    KC_G,  QK_REP,     HYP_OSM,    KC_H,    MQ_J,    MQ_K,    MQ_L, MQ_SCLN, KC_QUOT,
      KC_ENT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                          KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, QK_LLCK,
-                              QK_AREP, KC_BSPC, MO(_NUM),                      MO(_SYM),  KC_SPC,  QK_REP
+                                QK_REP, KC_BSPC, TAB_NUM,                        TO_SYM,  KC_SPC,  QK_REP
   ),
 
   [_ENTHIUM] = LAYOUT_split_3x6_3_ex2(
      KC_GRV,    KC_B,    KC_Y,    KC_O,    KC_U, KC_SCLN, QK_AREP,     OSL_MED,    KC_X,    KC_L,    KC_D,    KC_W,    KC_V, XXXXXXX,
        KC_Z,    ME_C,    ME_I,    ME_E,    ME_A, KC_COMM,  QK_REP,     HYP_OSM,    KC_K,    ME_H,    ME_T,    ME_N,    ME_S,    KC_Q,
      KC_ENT, KC_QUOT, KC_MINS,  KC_EQL,  KC_DOT, KC_SLSH,                          KC_J,    KC_M,    KC_G,    KC_P,    KC_F, QK_LLCK,
-                               QK_AREP, KC_BSPC, MO(_NUM),                        SYM_R,  KC_SPC,  QK_REP
+                                QK_REP, KC_BSPC, TAB_NUM,                         R_SYM,  KC_SPC,  QK_REP
   ),
 
   [_NUM] = LAYOUT_split_3x6_3_ex2(
     _______,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5, _______,     _______,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_MINS,
     XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX, _______,     _______, KC_COMM,    KC_4,    KC_5,    KC_6, KC_ASTR,  KC_EQL,
     _______,    UNDO,     CUT,    COPY,   PASTE, XXXXXXX,                        KC_DOT,    KC_1,    KC_2,    KC_3, KC_SLSH, _______,
-                               _______, _______, _______,                       _______, _______, _______
+                               QK_AREP, _______, _______,                          KC_0, _______, QK_AREP
   ),
 
   [_SYM] = LAYOUT_split_3x6_3_ex2(
     _______, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC, _______,     _______, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, XXXXXXX,
     XXXXXXX, XXXXXXX, XXXXXXX, KC_LPRN, KC_RPRN, KC_SCLN, _______,     _______, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, XXXXXXX, XXXXXXX,
     _______, KC_QUOT, KC_MINS,  KC_EQL,  KC_DOT, KC_SLSH,                       KC_HOME, KC_PGDN, KC_PGUP,  KC_END, XXXXXXX, _______,
-                               _______, _______, _______,                       _______, _______, _______
+                               QK_AREP, _______, _______,                       _______, _______, QK_AREP
   ),
 
   [_FUN] = LAYOUT_split_3x6_3_ex2(
     XXXXXXX,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5, _______,     _______,   KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
     QK_BOOT, XXXXXXX, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX, _______,     _______, XXXXXXX, XXXXXXX, XXXXXXX, CG_LNRM, XXXXXXX,  KC_F12,
-    EE_CLR,  XXXXXXX, RGB_HUD, RGB_SAD, RGB_VAD, RGB_MOD,                       XXXXXXX, CG_LSWP, XXXXXXX, XXXXXXX, CM_TOGG, AS_TOGG,
+    EE_CLR,  XXXXXXX, RGB_HUD, RGB_SAD, RGB_VAD, RGB_MOD,                       XXXXXXX, CG_LSWP, XXXXXXX, CM_TOGG, AS_TOGG, _______,
                                _______, _______, _______,                       _______, _______, _______
   ),
 
@@ -145,13 +119,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX,    UNDO,     CUT,    COPY,   PASTE, KC_PSCR,                       KC_HOME, KC_PGDN, KC_PGUP,  KC_END, XXXXXXX, _______,
                                _______, _______, _______,                       _______, _______, _______
   ),
-
-//   [_NAV] = LAYOUT_split_3x6_3_ex2(
-//     XXXXXXX, XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, XXXXXXX, _______,     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-//     XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX, _______,     _______, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, XXXXXXX, XXXXXXX,
-//     XXXXXXX,    UNDO,     CUT,    COPY,   PASTE, XXXXXXX,                       KC_HOME, KC_PGDN, KC_PGUP,  KC_END, XXXXXXX, QK_LLCK,
-//                                _______, _______, _______,                       _______, _______, _______
-//   ),
 
 };
 
